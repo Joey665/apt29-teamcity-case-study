@@ -1,0 +1,22 @@
+This is the part most security write-ups skip, and it's the part that actually gets budget approved.
+
+**What happened, in plain terms:** A state-linked intelligence service broke into a tool that software companies use to build and release their products. From inside that tool, they had a path to source code, the certificates that make software look legitimate, and the pipeline that pushes updates to customers. This is the same category of access that led to the SolarWinds breach in 2020 — a single compromised build step turning into a supply chain attack against thousands of downstream customers.
+
+**Why it matters financially:** This isn't just a downtime risk. If a build server is compromised, the bigger cost is rebuilding trust — with regulators, with customers, with anyone who has to ask "was the version of your software I'm running actually safe?" That question is expensive to answer honestly, and it's catastrophic if you can't.
+
+**Where this maps to controls you already report against:** Under the NIST Cybersecurity Framework, this sits squarely in Protect (patch management, PR.IP) and Detect (continuous monitoring, DE.CM). Under ISO 27001, it falls under A.12.6 — technical vulnerability management — and A.14.2, security built into the development process itself.
+
+**What I'd put in front of leadership, in order:**
+
+1. Patch internet-facing build and CI/CD infrastructure within 48 hours of any vendor disclosure. Treat it as Tier 1 critical, not an internal tool nobody worries about.
+2. Require MFA on every administrative path into build and deployment systems.
+3. Get CI/CD infrastructure off the open internet entirely. It should be segmented the way you'd segment a domain controller.
+4. Run red-team exercises specifically against the build pipeline, on a quarterly cadence — not just the general network penetration test that already happens once a year.
+
+---
+
+## What This Confirms
+
+I've written about this pattern three times now — Nx Console, the npm/Hugging Face campaign, and now this. The technique doesn't change. The infrastructure attackers abuse to hide does. OneDrive and Dropbox here. Hugging Face there. The lesson holds across all three: the more your security posture assumes a known platform is automatically safe, the more exposed you are to exactly this kind of attack.
+
+The TeamCity CVE has been patched since September 2023. The technique it enabled has not gone anywhere.

@@ -4,7 +4,7 @@
 
 ## Why This Case Study
 
-In December 2023, the FBI, CISA, NSA, and three allied agencies published a joint advisory. Russia's Foreign Intelligence Service — APT29, also known as Midnight Blizzard, the same group behind SolarWinds — had been exploiting a vulnerability in JetBrains TeamCity since September 2023.
+In December 2023, the FBI, CISA, NSA, and three allied agencies published a joint advisory. Russia's Foreign Intelligence Service — APT29, also known as Midnight Blizzard, the same group behind SolarWinds had been exploiting a vulnerability in JetBrains TeamCity since September 2023.
 
 TeamCity is a build automation tool. Developers use it to compile, test, and ship software. That makes it infrastructure, not an application. Compromise the build server, and you don't just compromise one company. You compromise everything that company ships afterward.
 
